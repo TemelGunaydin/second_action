@@ -1,0 +1,8 @@
+name: Output information
+on: workflow_dispatch # manuel olarak trigger edilmesi için.
+jobs:
+  first_job_give_info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output github context
+        run: echo "{{ toJson(github)}}"
