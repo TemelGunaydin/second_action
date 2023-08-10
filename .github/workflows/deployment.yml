@@ -1,5 +1,5 @@
 name: Deploy Project
-on: push
+on: [push,workflow_dispatch] # push ve workflow_dispatch eventlerinde çalışsın. Onun için [] içinde yazıldı. Tek olsaydı [] gerek yoktu.
 jobs:
   test: # 1.job ismidir. İstenilen isim verilebilir
     runs-on: ubuntu-latest
