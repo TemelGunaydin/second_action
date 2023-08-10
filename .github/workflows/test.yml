@@ -1,0 +1,17 @@
+name: Second Workflow
+on: push
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get code
+            - uses: actions/checkout@v3 # Kodu almak için kullanıyoruz.
+            - name: Install Nodejs
+            - uses: actions/setup-node@v2 # Nodejs kurulumu için kullanıyoruz.
+              with:
+                  node-version: '18.x' # with ile Nodejs sürümünü belirtiyoruz.with ile Configuration yapıyoruz.
+            - name: Install dependencies
+            - run: npm ci # npm install ile dependenciesleri yüklüyoruz. ci ile package-lock.json dosyasını(orada yazan versiyonları) kullanıyoruz.
+            - name: Run tests
+            - run: npm test # npm test ile testleri çalıştırıyoruz.
+
